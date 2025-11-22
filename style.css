@@ -1,0 +1,370 @@
+/* ======== CONFIGURAÇÕES GERAIS ======== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;600;700&display=swap');
+
+:root {
+    --bg-dark: #0e0e10;
+    --bg-dark-2: #1a1a1d;
+    --glass-bg: rgba(255, 255, 255, 0.06);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --primary: #ff4c4ce5;
+    --primary-hover: #ff7a7a;
+    --text-light: #e5e5e5;
+    --text-muted: #a1a1a1;
+    --radius: 18px;
+    --transition: 0.25s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: 
+        linear-gradient(rgba(10,10,10,0.55), rgba(10,10,10,0.7)),
+        url("https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1920")
+        center/cover no-repeat fixed;
+    color: var(--text-light);
+    font-family: "Poppins", sans-serif;
+}
+
+.header {
+    background: var(--glass-bg);
+    border-bottom: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    padding: 20px 40px;
+    margin-bottom: 35px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.45);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.logosemfundo-site {
+    width: 58px;
+    height: 58px;
+    image-rendering: pixelated;  /* Deixa o estilo 8-bit real */
+    border-radius: 10px;
+    transition: transform .25s ease, filter .25s ease;
+}
+
+.site-title {
+    font-family: "Orbitron", sans-serif;
+    font-size: 34px;
+    color: var(--primary);
+    letter-spacing: 2px;
+    background: linear-gradient(00deg, #ef3bff, #ff4949, #ff3b3b);
+    background-size: 200%;
+    animation: neonGradient 6s ease infinite;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: 0 0 12px rgba(255, 92, 92, 0.295);
+}
+
+@keyframes neonGradient {
+    0% { background-position: 0% }
+    50% { background-position: 100% }
+    100% { background-position: 0% }
+}
+
+.search-container {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    max-width: 380px;
+}
+
+.search-container input {
+    flex: 1;
+}
+
+.main {
+    padding: 0 40px;
+}
+
+.welcome-screen {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 700px;
+    margin: 80px auto;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius);
+    box-shadow: 0 0 20px rgba(0,0,0,0.45);
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.welcome-screen h2 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 32px;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.welcome-screen p {
+    color: var(--text-light);
+    opacity: 0.85;
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+
+.welcome-btn {
+    font-size: 18px;
+    padding: 14px 28px;
+}
+
+.hidden-section {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 50px;
+}
+
+.card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: var(--radius);
+    width: 100%;
+    max-width: 520px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.45);
+
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 16px rgba(255, 92, 92, 0.39);
+    border-color: rgba(255, 92, 92, 0.24);
+}
+
+.card:active {
+    transform: scale(0.96);
+    box-shadow: 0 0 25px rgba(255, 92, 92, 0.6);
+}
+
+img.game-cover {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.35);
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    padding: 12px 22px;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(255, 92, 92, 0.55);
+    animation: pulseGlow 3.5s infinite ease-in-out;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: 0.5s;
+}
+
+button:hover::before {
+    left: 120%;
+}
+
+button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 0 18px rgba(255, 92, 92, 0.75);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+input, select, textarea {
+    background: var(--bg-dark-2);
+    border: 1px solid #2e2e2e;
+    padding: 12px;
+    border-radius: var(--radius);
+    width: 100%;
+    color: var(--text-light);
+    transition: var(--transition);
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 12px rgba(255, 92, 92, 0.55);
+}
+
+
+
+/* CONFS DO FOOTER */
+
+.footer {
+    margin-top: 50px;
+    padding: 25px 40px;
+    background: var(--bg-dark-2);
+    border-top: 1px solid #2c2c2c;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--primary-hover);
+    text-shadow: 0 0 10px rgba(255, 92, 92, 0.55);
+}
+
+.footer-copy {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.icon {
+    width: 22px;
+    height: 22px;
+    stroke: var(--primary);
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+pre {
+    background: var(--bg-dark-2);
+    border: 1px solid #2c2c2c;
+    border-radius: var(--radius);
+    padding: 20px;
+    max-height: 350px;
+    overflow-y: auto;
+    font-size: 14px;
+}
+
+.spacing {
+    height: 20px;
+}
+
+
+
+/* CONFS DO MODAL */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: var(--bg-dark-2);
+    padding: 30px;
+    width: 660px;
+    border-radius: 12px;
+    text-align: left;
+    animation: pop 0.2s ease-out;
+}
+
+.modal-cover {
+    width: 600px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.fechar {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 32px;
+    cursor: pointer;
+    color: var(--text-light);
+}
+
+@keyframes pop {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.modal-btn {
+    background: #333;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.modal-btn:hover {
+    background: #555;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>True Games</title>
+    <link rel="icon" type="image/png" href="Logo sem fundo.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="brand">
+                <img src="Logo sem fundo.png" alt="Logo True Games" class="logosemfundo-site">
+                <h1 class="site-title">True Games</h1>
+            </div>
+
+            <div class="search-container">
+                <input type="text" id="campoBusca" placeholder="Buscar jogos..." aria-label="Busca de jogos">
+                <button onclick="buscarJogos()">Buscar</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+
+
+        <div id="welcomeScreen" class="welcome-screen">
+            <h2>Bem-vindo ao True Games 🎮</h2>
+            <p>
+                Explore uma lista cuidadosamente selecionada com alguns dos melhores jogos já lançados.
+                Pesquise, descubra e veja detalhes completos de cada título — tudo em um só lugar.
+            </p>
+            <button id="startButton" class="welcome-btn">Vambora!</button>
+        </div>
+
+        <section class="card-container"></section>
+    </main>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="fecharModal" class="fechar">&times;</span>
+
+            <img id="modalCapa" class="modal-cover" />
+
+            <h2 id="modalTitulo"></h2>
+
+            <p><strong>Gênero:</strong> <span id="modalGenero"></span></p>
+            <p><strong>Plataforma:</strong> <span id="modalPlataforma"></span></p>
+            <p><strong>Lançamento:</strong> <span id="modalLancamento"></span></p>
+            <p><strong>Nota:</strong> <span id="modalNota"></span></p>
+
+            <p id="modalDescricao" class="modalDescricao"></p>
+
+            <div class="modal-buttons">
+                <a id="btnSteam" class="modal-btn" target="_blank">Ver na Steam</a>
+                <a id="btnReview" class="modal-btn" target="_blank">Review</a>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <ul class="footer-links">
+            <li><a href="https://github.com/Elias-Filipe" target="_blank">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/elias-semeao/" target="_blank">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/elias_flp/" target="_blank">Instagram</a></li>
+        </ul>
+
+        <p class="footer-copy">Desenvolvido por Elias Semeão</p>
+    </footer>
+
+</body>
+
+</html>
